@@ -11,7 +11,11 @@
         class="badge"
         [ngClass]="{'badge-primary': _cs.usuario.uid == chat.uid,
                     'badge-success': _cs.usuario.uid != chat.uid}">
-        {{_cs.usuario.nombre}}</span>
+
+        <img *ngIf='_cs.usuario.uid == chat.uid' class="imageChat" [src]="_cs.usuario.img" alt="">
+        {{_cs.usuario.nombre}}
+        <img *ngIf='_cs.usuario.uid != chat.uid' class="imageChat" src="./assets/images/businessman.png" alt="">
+        </span>
         <p>{{chat.mensaje}}</p>
     </div>
 

@@ -2,5 +2,6 @@ export interface Mensaje {
   nombre: string,
   mensaje: string,
   data?: number,
-  uid?:string
+  uid:string,
+  img?: string
 }
