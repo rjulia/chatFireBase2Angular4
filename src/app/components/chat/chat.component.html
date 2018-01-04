@@ -1,6 +1,14 @@
 <h2>Chat</h2>
 <hr>
 <div class="app-mensajes" id="app-mensajes">
+
+
+    <div class="text-right" *ngFor="let chat of _cs.chats">
+        <span class="badge badge-primary">Fernado</span>
+        <p>{{chat.mensaje}}</p>
+    </div>
+
+<!--
   <div class="text-right">
     <span class="badge badge-primary">Fernado</span>
     <p>Este es un mensaje de chat</p>
@@ -8,12 +16,19 @@
   <div>
       <span class="badge badge-success">Maria</span>
       <p>Este es un mensaje de chat</p>
-  </div>
+  </div> -->
 </div>
 <input
-  type="text"
-  name="mensaje"
-  [(ngModel)]="mensaje"
-  class="form-control"
-  (keyup.enter)="enviarMesaje()"
-  placeholder="Enviar Mensaje">
+type="text"
+name="mensaje"
+[(ngModel)]="mensaje"
+class="form-control"
+(keyup.enter)="enviarMensaje()"
+placeholder="Enviar Mensaje">
+
+<div *ngIf='this.alertSuccess' class="alert alert-success fadeIn" role="alert">
+    {{this.alertSuccess}}
+</div>
+<div *ngIf='this.alertFaild' class="alert alert-success fadeIn" role="alert">
+    {{this.alertFaild}}
+</div>
